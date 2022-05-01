@@ -2,11 +2,8 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 const { Node } = require('../extensions/list-tree.js');
 
-/**
- * Implement simple binary search tree according to task description
- * using Node from extensions
- */
-module.exports = class BinarySearchTree {
+class BinarySearchTree {
+
 
     constructor() {
         this.binaryRoot = null
@@ -33,8 +30,6 @@ module.exports = class BinarySearchTree {
     add(data) {
         this.binaryRoot = this.addNode(this.binaryRoot, data);
     }
-
-
 
     search(node, data) {
         if (node === null) {
@@ -71,6 +66,7 @@ module.exports = class BinarySearchTree {
         }
 
     }
+
     max() {
 
         let currentNode = this.binaryRoot;
@@ -84,3 +80,7 @@ module.exports = class BinarySearchTree {
         }
     }
 }
+
+module.exports = {
+  BinarySearchTree
+};
